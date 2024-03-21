@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.12
-    parallelism: 20
+    parallelism: 5
     resource_class: large
     steps:
       - run:
@@ -20,7 +20,7 @@ jobs:
   test:
     docker:
       - image: cimg/python:3.12
-    parallelism: 20
+    parallelism: 10
     resource_class: large
     steps:
       - run:
